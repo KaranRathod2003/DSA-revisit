@@ -15,8 +15,11 @@ public class Main {
         boolean isValid = validPalindrome(s);
 //        System.out.println(isValid);
         int[] prices = {7, 6, 4, 3, 1};
-        System.out.println(bestTimeToBuyStocks(prices));
-
+//        System.out.println(bestTimeToBuyStocks(prices));
+char[] sc = {'h', 'e', 'l', 'l', 'o'};
+        System.out.println(sc);
+reverserString(sc);
+        System.out.println(sc);
     }
     // Two sum
     public static int[] twoSumBruteForce(int[] nums, int target){
@@ -72,13 +75,18 @@ public class Main {
         return maxProfit;
     }
 
-    // Best time to buy and sell stocks
-    // [7, 1, 5, 3, 6, 4]
-//    int maxProfit = 0;
-//    int currentProfit = 0;
-//    two pointer -> i = 0; j = i + 1;
-//    i = 7, j = 1   check j < i -> i++,
-//    i = 1, j = 5   check false -> i - j = currentProfit = 1 - 5 => 4  aur maxProfit me Math.max(currentProfit, maxProfit)
-//    i++,  j++
-
+    public static void reverserString(char[] s){
+        int left = 0;
+        int right = s.length - 1;
+        while (left < right){
+            swapArrayElems(s,left, right);
+            left++;
+            right--;
+        }
+    }
+    public static void swapArrayElems(char[] s, int left, int right){
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+    }
 }
