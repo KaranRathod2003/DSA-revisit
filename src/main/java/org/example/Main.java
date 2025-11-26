@@ -13,7 +13,9 @@ public class Main {
 //        System.out.println(result[0] + ", " + result[1]);
         String s = "race a car";
         boolean isValid = validPalindrome(s);
-        System.out.println(isValid);
+//        System.out.println(isValid);
+        int[] prices = {7, 6, 4, 3, 1};
+        System.out.println(bestTimeToBuyStocks(prices));
 
     }
     // Two sum
@@ -58,5 +60,25 @@ public class Main {
         return true;
     }
 
+    public static int bestTimeToBuyStocks(int[] prices){
+        int minPrice = prices[0];
+        int n = prices.length;
+        int maxProfit = 0;
+        for(int i = 1; i <= n - 1; i++){
+            minPrice = Math.min(prices[i], minPrice);
+            int currentProfit = prices[i] - minPrice;
+            maxProfit = Math.max(currentProfit, maxProfit);
+        }
+        return maxProfit;
+    }
+
+    // Best time to buy and sell stocks
+    // [7, 1, 5, 3, 6, 4]
+//    int maxProfit = 0;
+//    int currentProfit = 0;
+//    two pointer -> i = 0; j = i + 1;
+//    i = 7, j = 1   check j < i -> i++,
+//    i = 1, j = 5   check false -> i - j = currentProfit = 1 - 5 => 4  aur maxProfit me Math.max(currentProfit, maxProfit)
+//    i++,  j++
 
 }
