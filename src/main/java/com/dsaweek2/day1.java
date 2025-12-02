@@ -5,9 +5,15 @@ public class day1 {
 
         int[] arr = {-1,0,3,5,9,12};
         int[][] matrix = {{1,2,4,8},{10,11,12,13},{14,20,30,40}};
-        int n = arr.length - 1;
-        int target = 9;
-        System.out.println("anser :" + searchA2DMatrix(matrix, target));
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int mid = 6 + 5 / 2;
+//        System.out.println(mid);
+
+        System.out.println("row : " + 9 / n + " col : " + 9 % n);
+//        int n = arr.length - 1;
+        int target = 20;
+//        System.out.println("answer : " + searchA2DMatrix(matrix, target));
     }
     // LC : 704 easy [Binary search]
     // approach One  : Iterative
